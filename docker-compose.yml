@@ -1,6 +1,6 @@
 version: '3.3'
 services:
   frontend:
-    image: biggib01/234-deploylab-frontend:latest
+    image: biggib01/234-deploylab-frontend-new:latest
     ports:
-      - "9999:80"
+      - "8086:80"

@@ -36,13 +36,15 @@ jobs:
         with:
           context: .
           push: true
-          tags: biggib01/234-deploylab-frontend:latest
+          tags: biggib01/234-deploylab-frontend-new:latest
       -
         name: prepare the docker-compose run
         run: |
-               mkdir 234-deploylab-frontend
-               cp docker-compose-dev.yml 234-deploylab-frontend/docker-compose-dev.yml
-               cd 234-deploylab-frontend
-               docker-compose -H ${{ secrets.HOST_SERVER}} -f docker-compose-dev.yml up -d
+               mkdir 234-deploylab-frontend-new
+               cp docker-compose.yml 234-deploylab-frontend-new/docker-compose.yml
+               cd 234-deploylab-frontend-new
+               docker-compose -H ${{ secrets.HOST_SERVER}} down
+               docker-compose -H ${{ secrets.HOST_SERVER}} pull
+               docker-compose -H ${{ secrets.HOST_SERVER}} up -d
                
                
