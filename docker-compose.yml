@@ -3,4 +3,4 @@ services:
   frontend:
     image: biggib01/234-deploylab-frontend-new:latest
     ports:
-      - "8086:80"
+      - "9999:80"
